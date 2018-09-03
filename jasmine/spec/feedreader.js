@@ -44,21 +44,22 @@ $(function() {
     });
 
     describe('The menu', function(){
+        const bodyElement = document.querySelector('body');
 
 
         it('is hidden', function(){
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+            expect(bodyElement.classList.contains('menu-hidden')).toBe(true);
         });
 
 
         it('show and hide', function(){
             $('a.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBe(false);
+            expect(bodyElement.classList.contains('menu-hidden')).toBe(false);
 
 
 
             $('a.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+            expect(bodyElement.classList.contains('menu-hidden')).toBe(true);
 
         })
     });
@@ -82,7 +83,7 @@ $(function() {
 
 
     describe('New feed Selection',function(){
-        
+
          var oldFeed;
 
          beforeEach(function(done){
